@@ -1,15 +1,20 @@
 <%- include('../partials/headstart') %>
 <link rel="stylesheet" href="/assets/css/archive.css" />
-<%- include('../partials/headend') %>
-
-<%- include('../partials/nav-top') %>
-<a href="archive" class="mx-4"><img src="../assets/images/inbox-file-svgrepo-com.svg" alt="Inbox" class="w-5" /></a>
-<h2 class="text-drab font-alt font-bold">Newsbox</h2>
-<a href="settings" class="mx-4"><img src="../assets/images/Settings.svg" alt="settings"></a>
+<script>
+  function goBack() {
+  window.history.back();
+}
+</script>
+<%- include('../partials/headend') %> <%- include('../partials/nav-top') %>
+<button class="mx-4" onclick="goBack()">
+  <img src="../assets/images/icn_back.svg" alt="back" />
+</button>
+<h2 class="text-drab font-alt font-bold">archive</h2>
+<a href="../settings" class="mx-4"><img src="../assets/images/Settings.svg" alt="settings"></a>
 <%- include('../partials/nav-buttom') %>
 <main id="main">
   <button id="europe-dropdown" class="w-full mt-4">
-<li class="categories font-primary list-none">
+    <li class="categories font-primary list-none">
       <div
         class="w-full border-ice h-item border-b flex cursor-pointer items-center px-4"
       >
@@ -26,42 +31,40 @@
         <h3 class="category uppercase text-drab ml-3 font-bold select-none">
           Europe
         </h3>
-
       </div>
 
       <ul class="article-list hidden"></ul>
     </li>
   </button>
   <div class="europe europe-hide"></div>
-  
+
   <button id="health-dropdown" class="w-full">
-  <li class="categories font-primary list-none health-dropdown">
+    <li class="categories font-primary list-none health-dropdown">
       <div
-      class="w-full border-ice h-item border-b flex cursor-pointer items-center px-4"
+        class="w-full border-ice h-item border-b flex cursor-pointer items-center px-4"
       >
         <div
-        class="w-10 h-10 relative rounded-circle border-2 border-snow shadow-big"
+          class="w-10 h-10 relative rounded-circle border-2 border-snow shadow-big"
         >
           <img
-          src="/assets/images/icn_surfing.svg"
-          alt="Icon"
-          class="absolute w-4/6 translate-50 left-1/2 top-1/2"
+            src="/assets/images/icn_surfing.svg"
+            alt="Icon"
+            class="absolute w-4/6 translate-50 left-1/2 top-1/2"
           />
+        </div>
+
+        <h3 class="category uppercase text-drab ml-3 font-bold select-none">
+          Health
+        </h3>
       </div>
 
-      <h3 class="category uppercase text-drab ml-3 font-bold select-none">
-        Health
-      </h3>
-
-    </div>
-
-    <ul class="article-list hidden"></ul>
-  </li>
-</button>
+      <ul class="article-list hidden"></ul>
+    </li>
+  </button>
   <div class="health health-hide"></div>
 
   <button id="sports-dropdown" class="w-full">
-<li class="categories font-primary list-none sports-dropdown">
+    <li class="categories font-primary list-none sports-dropdown">
       <div
         class="w-full border-ice h-item border-b flex cursor-pointer items-center px-4"
       >
@@ -78,7 +81,6 @@
         <h3 class="category uppercase text-drab ml-3 font-bold select-none">
           Sports
         </h3>
-
       </div>
 
       <ul class="article-list hidden"></ul>
@@ -87,7 +89,7 @@
   <div class="sports sports-hide"></div>
 
   <button id="business-dropdown" class="w-full">
-<li class="categories font-primary list-none business-dropdown">
+    <li class="categories font-primary list-none business-dropdown">
       <div
         class="w-full border-ice h-item border-b flex cursor-pointer items-center px-4"
       >
@@ -104,7 +106,6 @@
         <h3 class="category uppercase text-drab ml-3 font-bold select-none">
           Business
         </h3>
-
       </div>
 
       <ul class="article-list hidden"></ul>
@@ -113,7 +114,7 @@
   <div class="business business-hide"></div>
 
   <button id="travel-dropdown" class="w-full">
-<li class="categories font-primary list-none travel-dropdown">
+    <li class="categories font-primary list-none travel-dropdown">
       <div
         class="w-full border-ice h-item border-b flex cursor-pointer items-center px-4"
       >
@@ -130,30 +131,32 @@
         <h3 class="category uppercase text-drab ml-3 font-bold select-none">
           Travel
         </h3>
-
       </div>
 
       <ul class="article-list hidden"></ul>
     </li>
-    </button>
+  </button>
   <div class="travel travel-hide"></div>
-
 </main>
 
 <%- include('../partials/afterFooter') %>
 <script src="../assets/javascript/fetch.js"></script>
 <script src="../assets/javascript/dropdown.js"></script>
-<script src="../assets/javascript/slider.js"></script>
 <script src="../assets/javascript/pullToRefresh.js"></script>
+<script src="../assets/javascript/swiper.js"></script>
 <template id="template">
-  <li
+  <!-- <li
     class="article left-0 h-article border-b border-ice flex items-center pl-5 font-primary overflow-visible relative mb-3 link"
+  > -->
+  <div
+    class="swiper-container article left-0 h-article border-b border-ice flex items-center pl-5 font-primary overflow-visible relative mb-3 link"
   >
     <img
       src="https://via.placeholder.com/64/09f.png/fff"
       alt="Image"
-      class="w-16 h-16 object-cover object-top block rounded-circle pointer-events-none select-none image"
+      class="w-16 h-16 image"
     />
+
     <div class="ml-5 overflow-hidden flex flex-wrap">
       <a
         class="truncate whitespace-no-wrap overflow-hidden w-65vw text-drab font-bold select-none title"
@@ -169,10 +172,12 @@
         soluta, possimus illo!
       </a>
     </div>
+
     <!-- <div
-      class="article-btn cursor-pointer bg-danger h-full w-16 absolute right-0 translateX100 flex items-center justify-center"
+      class="article-btn cursor-pointer bg-sage w-16 h-16 right-0 translateX100 flex items-center justify-center absolute"
     >
-      <img src="../assets/images/ic_delete_24px.svg" alt="" /> -->
-    </div>
-  </li>
+      <img src="../assets/images/inbox-file-svgrepo-com.svg" class="h-4 w-4" alt="" />
+    </div> -->
+  </div>
+  <!-- </li> -->
 </template>

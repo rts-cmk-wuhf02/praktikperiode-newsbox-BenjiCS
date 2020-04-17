@@ -1,0 +1,67 @@
+<%- include('../partials/headstart') %>
+<link rel="stylesheet" href="/assets/css/archive.css" />
+<script>
+  function goBack() {
+    window.history.back();
+  }
+</script>
+<%- include('../partials/headend') %>
+<header class="flex justify-center flex-wrap">
+  <nav class="flex justify-between my-3 w-screen">
+    <button class="mx-4" onclick="goBack()">
+      <img src="../assets/images/icn_back.svg" alt="back" />
+    </button>
+    <h2 class="text-drab font-alt font-bold">News settings</h2>
+    <button class="mx-4"></button>
+  </nav>
+</header>
+<main id="main" class="bg-lightgray h-94">
+  <section class="text-center pt-5">
+    <h1 class="text-saga text-2xl font-bold">Manage</h1>
+    <h1 class="text-darkgray text-base font-bold mb-5">Categories</h1>
+  </section>
+  <section class="bg-white border-solid rounded-lg m-4 mt-32 p-4">
+      <div class="flex my-4 items-center justify-between">
+          <h2 class="font-bold">EUROPE</h2>
+          <label class="switch-wrap" id="switch-wrap1">
+            <input type="checkbox" id="checkbox1"/>
+            <div class="switch"></div>
+          </label>
+      </div>
+      <div class="flex my-4 items-center justify-between">
+          <h2 class="font-bold">EUROPE</h2>
+          <label class="switch-wrap" id="switch-wrap2">
+            <input type="checkbox" id="checkbox2"/>
+            <div class="switch"></div>
+          </label>
+      </div>
+      <div class="flex my-4 items-center justify-between">
+          <h2 class="font-bold">EUROPE</h2>
+          <label class="switch-wrap" id="switch-wrap3">
+            <input type="checkbox" id="checkbox3"/>
+            <div class="switch"></div>
+          </label>
+      </div>
+      <div class="flex my-4 items-center justify-between">
+          <h2 class="font-bold">EUROPE</h2>
+          <label class="switch-wrap" id="switch-wrap4">
+            <input type="checkbox" id="checkbox4"/>
+            <div class="switch"></div>
+          </label>
+      </div>
+      <div class="flex my-4 items-center justify-between">
+          <h2 class="font-bold">EUROPE</h2>
+          <label class="switch-wrap" id="switch-wrap5">
+            <input type="checkbox" id="checkbox5"/>
+            <div class="switch"></div>
+          </label>
+      </div>
+  </section>
+
+  <div class="flex items-center mt-32 flex-col">
+      <button class="border-solid border-4 rounded-full p-4 border-black font-bold">TOGGLE DARK MODE</button>
+      <p class="mt-12 text-slate">Version 4.8.15.16.23.42</p>
+  </div>
+</main>
+<script src="../assets/javascript/settings.js"></script>
+<%- include('../partials/afterFooter') %>
