@@ -1,1 +1,17 @@
 @import "base";
+
+.europe-hide,
+.health-hide,
+.sports-hide,
+.business-hide,
+.travel-hide {
+    display: none;
+}
+
+.europe-show,
+.health-show,
+.sports-show,
+.business-show,
+.travel-show {
+    display: block;
+}
